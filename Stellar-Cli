@@ -1,7 +1,5 @@
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup target add wasm32v1-none
 brew install stellar-cli
 cargo install --locked stellar-cli@23.1.4
-stellar completion --shell powershell | Out-String | Invoke-Expression
-New-Item -ItemType Directory -Path $(Split-Path $PROFILE) -Force
-if (-Not (Test-Path $PROFILE)) { New-Item -ItemType File -Path $PROFILE | Out-Null }
-Add-Content $PROFILE 'Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete'
-Add-Content $PROFILE 'stellar completion --shell powershell | Out-String | Invoke-Expression'
+
